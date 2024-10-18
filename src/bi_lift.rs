@@ -8,7 +8,7 @@ mod up {
             let mut up = vec![pa];
 
             for k in 0..32 {
-                up.push((0..up[0].len()).map(|u| up[k][up[k][u] as usize]).collect());
+                up.push((up[k].iter()).map(|&u| up[k][u as usize]).collect());
             }
 
             Self { up }
