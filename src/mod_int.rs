@@ -6,7 +6,7 @@ mod mi {
         str::FromStr,
     };
 
-    #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Debug)]
+    #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
     pub struct ModInt<const MOD: u32> {
         val: u32,
     }
