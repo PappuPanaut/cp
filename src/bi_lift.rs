@@ -14,7 +14,7 @@ mod up {
             Self { up }
         }
 
-        pub fn kth(&self, u: usize, k: usize) -> usize {
+        pub fn kth(&self, u: usize, k: u32) -> usize {
             if k == 0 {
                 return u;
             }
