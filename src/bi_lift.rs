@@ -1,4 +1,5 @@
 mod up {
+    #[derive(Clone, Debug)]
     pub struct BiLift {
         up: Vec<Vec<u32>>,
     }
