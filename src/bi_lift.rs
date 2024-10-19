@@ -22,5 +22,28 @@ mod up {
 
             self.kth(self.up[k.trailing_zeros() as usize][u] as _, k & (k - 1))
         }
+
+        pub fn lca(&self, mut u: usize, mut v: usize, dep: &[u32]) -> usize {
+            if dep[u] < dep[v] {
+                return self.lca(v, u, dep);
+            }
+
+            u = self.kth(u, dep[u] - dep[v]);
+
+            if u == v {
+                return v;
+            }
+
+            for k in (0..33).rev() {
+                if self.up[k][u] == self.up[k][v] {
+                    continue;
+                }
+
+                u = self.up[k][u] as _;
+                v = self.up[k][v] as _;
+            }
+
+            self.up[0][u] as _
+        }
     }
 }
